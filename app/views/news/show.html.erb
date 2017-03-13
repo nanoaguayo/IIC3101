@@ -1,0 +1,33 @@
+<div class="text-center">
+  <h1><%= @new.title %></h1>
+  <h3><%= @new.descent %></h3>
+  <p>
+    <%= @new.body %>
+  </p>
+  <button class="btn-danger">
+    <i class="fa fa-trash-o"></i>
+  </button>
+  <div style='margin-top:100px'>
+    <h3><u>Comentarios</u></h3>
+    <ul class="col-sm-4 col-sm-offset-4">
+      <% @comments.each do |comment| %>
+      <li>
+        <p>
+          <%= comment.body %>
+        </p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="text-center">
+    <%= form_for :comment do |f| %>
+      <div class="form-group row col-sm-8 col-sm-offset-2">
+        <p>
+          <%= f.label :comment, 'Nuevo comentario' %><br>
+          <%= f.text_field :comment, :class => "form-control" %>
+        </p>
+          <%= f.submit 'Publicar', :class => 'btn btn-primary' %>
+        </div>
+    <% end %>
+  </div>
+</div>
