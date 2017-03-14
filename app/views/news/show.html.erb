@@ -4,11 +4,11 @@
   </div>
   <h1><%= @new.title %></h1>
   <h3><%= @new.descent %></h3>
-  <p>
+  <p style="word-wrap: break-word;">
     <%= @new.body %>
   </p>
   <div style="margin-top:70px;">
-    <h3><u>Comentarios</u></h3>
+    <h3><u>Comentarios  (<%= @comments.count %>)</u></h3>
     <div class="col-sm-8 col-sm-offset-2 comments-container">
       <% @comments.each do |comment| %>
         <div class= "comment-container">

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    aux = New.all
-    @news = aux.sort_by(&:created_at).reverse.first(10)
+    aux = New.GetEditedNews
+    @news = aux.first(10)
     @comments_n = Array.new(10)
     index=0
     @news.each do |aux|

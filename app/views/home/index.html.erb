@@ -8,8 +8,8 @@
         </div>
         <h3><%= link_to aux.title,news_path(aux) %></h3>
         <h6><%= aux.descent %></h6>
-        <p>
-          <%= truncate(aux.body, :length => 1000) %>
+        <p style="word-wrap: break-word;">
+          <%= aux.body %>
         </p>
         <div class="comment-number-container">
           <i class="fa fa-comments-o"></i>

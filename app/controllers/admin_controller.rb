@@ -1,7 +1,6 @@
 class AdminController < ApplicationController
   def home
-    aux = New.all
-    @news = aux.sort_by(&:created_at).reverse
+    @news = New.GetEditedNews
     @comments_n = Array.new(@news.count)
     index = 0
     @news.each do |aux|
