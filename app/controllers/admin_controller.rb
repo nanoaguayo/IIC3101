@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   def home
     aux = New.all
-    @news = aux.sort_by &:updated_at
+    @news = aux.sort_by &:created_at
   end
   def creator
   end

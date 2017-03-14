@@ -1,1 +1,13 @@
-<h1>Hola</h1>
+<div class="text-center">
+  <div>
+    <% @news.each do |aux| %>
+      <div class="new-container">
+        <h3><%= link_to aux.title,news_path(aux) %></h3>
+        <h6><%= aux.descent %></h6>
+        <p>
+          <%= truncate(aux.body, :length => 1000) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

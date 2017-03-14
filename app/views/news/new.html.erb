@@ -1,0 +1,19 @@
+<div class="text-center">
+  <%= form_for(@new) do |f| %>
+    <div class="form-group row col-sm-8 col-sm-offset-2">
+      <p>
+        <%= f.label :title, 'Titulo' %><br>
+        <%= f.text_field :title, :class => "form-control" %>
+      </p>
+      <p>
+        <%= f.label :descent, 'Bajada de titulo' %><br>
+        <%= f.text_area :descent, :class => "form-control" %>
+      </p>
+      <p>
+        <%= f.label :body, 'Cuerpo' %><br>
+        <%= f.text_area :body, :class => "form-control", :rows => '7' %>
+      </p>
+        <%= f.submit 'Crear', :class => 'btn btn-primary' %>
+      </div>
+  <% end %>
+</div>

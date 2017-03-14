@@ -1,0 +1,26 @@
+// Place all the styles related to the News controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.username-comment {
+  font-style: italic;
+  font-weight: bold;
+  border: 1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: lightgray;
+}
+
+.body-comment {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid black;
+  background-color: gray;
+  color:white;
+}
+
+.new-container {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 50px;
+}

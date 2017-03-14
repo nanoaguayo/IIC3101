@@ -15,8 +15,8 @@ n5 = New.create(title: 'Noticia5', descent: 'Bajada de titulo 5', body: 'Cuerpo 
 n6 = New.create(title: 'Noticia6', descent: 'Bajada de titulo 6', body: 'Cuerpo de noticia6')
 
 #comments
-Comment.create(body: 'Comentario1', new: n1)
-Comment.create(body: 'Comentario2', new: n1)
-Comment.create(body: 'Comentario3', new: n2)
-Comment.create(body: 'Comentario4', new: n1)
-Comment.create(body: 'Comentario5', new: n3)
+Comment.create(username: 'Fernando', body: 'Comentario1', new: n1)
+Comment.create(username: 'Diego', body: 'Comentario2', new: n1)
+Comment.create(username: 'Fernando', body: 'Comentario3', new: n2)
+Comment.create(username: 'Juan', body: 'Comentario4', new: n1)
+Comment.create(username: 'Cristobal', body: 'Comentario5', new: n3)

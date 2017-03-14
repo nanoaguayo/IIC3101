@@ -4,15 +4,17 @@
   <p>
     <%= @new.body %>
   </p>
-  <button class="btn-danger">
-    <i class="fa fa-trash-o"></i>
-  </button>
   <div style='margin-top:100px'>
     <h3><u>Comentarios</u></h3>
     <ul class="col-sm-4 col-sm-offset-4">
       <% @comments.each do |comment| %>
       <li>
-        <p>
+        <p class="username-comment">
+          <%= comment.username %>
+        </p>
+      </li>
+      <li>
+        <p class="body-comment">
           <%= comment.body %>
         </p>
       </li>
@@ -22,6 +24,10 @@
   <div class="text-center">
     <%= form_for :comment do |f| %>
       <div class="form-group row col-sm-8 col-sm-offset-2">
+        <p>
+          <%= f.label :username, 'Nombre Usuario' %><br>
+          <%= f.text_field :username, :class => "form-control" %>
+        </p>
         <p>
           <%= f.label :comment, 'Nuevo comentario' %><br>
           <%= f.text_field :comment, :class => "form-control" %>

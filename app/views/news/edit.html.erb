@@ -1,5 +1,5 @@
 <div class="text-center">
-  <%= form_for :new do |f| %>
+  <%= form_for(@new) do |f| %>
     <div class="form-group row col-sm-8 col-sm-offset-2">
       <p>
         <%= f.label :title, 'Titulo' %><br>
@@ -13,7 +13,7 @@
         <%= f.label :body, 'Cuerpo' %><br>
         <%= f.text_area :body, :class => "form-control", :rows => '7' %>
       </p>
-        <%= f.submit 'Crear', :class => 'btn btn-primary' %>
+        <%= f.submit 'Guardar', :class => 'btn btn-primary' %>
       </div>
   <% end %>
 </div>
