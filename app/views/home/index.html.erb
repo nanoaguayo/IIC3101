@@ -1,5 +1,6 @@
 <div class="text-center">
   <div>
+    <% index = 0 %>
     <% @news.each do |aux| %>
       <div class="new-container">
         <div class="new-date">
@@ -10,7 +11,12 @@
         <p>
           <%= truncate(aux.body, :length => 1000) %>
         </p>
+        <div class="comment-number-container">
+          <i class="fa fa-comments-o"></i>
+          <%= @comments_n[index] %>
+        </div>
       </div>
+      <% index = index + 1 %>
     <% end %>
   </div>
 </div>

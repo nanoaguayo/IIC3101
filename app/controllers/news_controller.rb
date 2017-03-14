@@ -43,7 +43,7 @@ class NewsController < ApplicationController
     Comment.where(new_id: params[:id]).destroy_all
     @new = New.find(params[:id])
     @new.delete
-    flash.now[:success] = "Eliminada correctamente"
+    flash[:success] = "Eliminada correctamente"
     redirect_to admin_path
   end
 

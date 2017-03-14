@@ -1,6 +1,7 @@
 <div class="text-center">
   <button type="button" class="btn btn-default"><%= link_to "Crear Noticia", new_news_path %></button>
   <div>
+    <% index = 0 %>
     <% @news.each do |aux| %>
       <div class="new-container">
         <div class="new-date">
@@ -11,8 +12,12 @@
         <p>
           <%= truncate(aux.body, :length => 1000) %>
         </p>
+        <div class="comment-number-container">
+          <i class="fa fa-comments-o"></i>
+          <%= @comments_n[index] %>
+        </div>
         <button class="btn btn-default">
-          <%= link_to 'Eliminar', news_path(id: aux.id), method: :delete, data:{confirm: "Seguro que desea eliminar?"} %>
+          <%= link_to 'Eliminar', news_path(id: aux.id), {method: :delete, data: {confirm: "Seguro que desea eliminar?"}} %>
           <i class="fa fa-trash-o"></i>
         </button>
         <button class="btn btn-default">
@@ -20,6 +25,7 @@
           <i class="fa fa-pencil"></i>
         </button>
       </div>
+      <% index = index+1 %>
     <% end %>
   </div>
 </div>
