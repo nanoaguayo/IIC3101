@@ -1,39 +1,41 @@
 <div class="text-center">
+  <div class="new-date">
+    <%= @new.created_at %>
+  </div>
   <h1><%= @new.title %></h1>
   <h3><%= @new.descent %></h3>
   <p>
     <%= @new.body %>
   </p>
-  <div style='margin-top:100px'>
+  <div style="margin-top:70px;">
     <h3><u>Comentarios</u></h3>
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-8 col-sm-offset-2 comments-container">
       <% @comments.each do |comment| %>
-      <div class="username-comment">
-        <p>
-          <%= comment.username %>:
-        </p>
-      </div>
-      <div class="body-comment">
-        <p>
-          <%= comment.body %>
-        </p>
-      </div>
+        <div class= "comment-container">
+          <span class="username-comment col-sm-4">
+            <%= comment.username %>:
+          </span>
+          <span class="body-comment col-sm-8">
+            <%= comment.body %>
+          </span>
+        </div>
       <% end %>
     </div>
   </div>
-  <div class="text-center">
-    <%= form_for :comment do |f| %>
-      <div class="form-group row col-sm-8 col-sm-offset-2">
+  <div class="text-center row col-sm-8 col-sm-offset-2 comment-form">
+    <%= form_for :comment, url:{:controller=>'comments', :action=>'create'} do |f| %>
+      <div class="form-group row col-sm-10 col-sm-offset-1">
         <p>
           <%= f.label :username, 'Nombre Usuario' %><br>
           <%= f.text_field :username, :class => "form-control" %>
         </p>
         <p>
-          <%= f.label :comment, 'Nuevo comentario' %><br>
-          <%= f.text_field :comment, :class => "form-control" %>
+          <%= f.label :body, 'Nuevo comentario' %><br>
+          <%= f.text_field :body, :class => "form-control" %>
         </p>
-          <%= f.submit 'Publicar', :class => 'btn btn-primary' %>
-        </div>
+          <%= hidden_field_tag(:new_id, @new.id) %>
+          <%= f.submit 'Publicar', :class => 'btn btn-default' %>
+      </div>
     <% end %>
   </div>
 </div>

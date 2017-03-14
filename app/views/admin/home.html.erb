@@ -3,13 +3,16 @@
   <div>
     <% @news.each do |aux| %>
       <div class="new-container">
+        <div class="new-date">
+          <%= aux.created_at %>
+        </div>
         <h3><%= link_to aux.title,news_path(aux) %></h3>
         <h6><%= aux.descent %></h6>
         <p>
           <%= truncate(aux.body, :length => 1000) %>
         </p>
         <button class="btn btn-default">
-          <%= link_to 'Eliminar', news_path(id: aux.id), method: :delete %>
+          <%= link_to 'Eliminar', news_path(id: aux.id), method: :delete, data:{confirm: "Seguro que desea eliminar?"} %>
           <i class="fa fa-trash-o"></i>
         </button>
         <button class="btn btn-default">

@@ -2,6 +2,9 @@
   <div>
     <% @news.each do |aux| %>
       <div class="new-container">
+        <div class="new-date">
+          <%= aux.created_at %>
+        </div>
         <h3><%= link_to aux.title,news_path(aux) %></h3>
         <h6><%= aux.descent %></h6>
         <p>

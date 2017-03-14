@@ -4,24 +4,44 @@
 .username-comment {
   font-style: italic;
   font-weight: bold;
-  border: 1px solid black;
+  border: 1px solid white;
   border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   background-color: lightgray;
   text-align: left;
-  padding-left: 30px;
-  padding-top: 5px;
+  padding: 5px;
+  color: gray;
 }
 
 .body-comment {
-  border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border: 1px solid black;
-  border-top: 0px;
-  background-color: gray;
-  color:white;
+  border-top-right-radius: 5px;
+  border: 1px solid white;
+  border-left: 0px;
+  background-color: white;
+  color:gray;
   margin-bottom: 30px;
-  padding-top: 5px;
+  padding: 5px 0px;
+}
+
+.comment-container {
+  margin: 20px 0px;
+}
+
+.comment-form {
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding-top: 30px;
+}
+
+.new-date {
+  font-style: italic;
+  color: lightgray;
+  font-size: small;
+  float:left;
+  padding-left: 20px;
+  width:100%;
 }
 
 .new-container {
@@ -29,7 +49,15 @@
   border-radius: 10px;
   padding: 25px;
   margin-top: 50px;
-  width: 50%;
-  margin-left: 25%;
+  width: 60%;
+  margin-left: 20%;
   background-color: white;
+}
+
+.comments-container {
+  padding: 0px;
+}
+
+.create-new-container{
+    margin-top: 50px;
 }

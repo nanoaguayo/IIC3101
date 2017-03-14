@@ -6,7 +6,6 @@ class NewsController < ApplicationController
   end
 
   def new
-    puts 'new new new'
     @new = New.new
   end
 
@@ -15,8 +14,10 @@ class NewsController < ApplicationController
     @new = New.new(new_params)
     if @new.save then
       @comments = Comment.where(new_id: @new.id)
+      flash.now[:success] = "Noticia creada correctamente"
       render 'show'
     else
+      flash.now[:danger] = "No se ha podido crear la noticia"
       render 'new'
     end
   end
@@ -30,15 +31,19 @@ class NewsController < ApplicationController
     if @new.update_attributes(new_params)
       # Handle a successful update.
       @comments = Comment.where(new_id: @new.id)
+      flash.now[:success] = "Noticia editada correctamente"
       render 'show'
     else
+      flash.now[:danger] = "No se ha podido editar"
       render 'edit'
     end
   end
 
   def destroy
+    Comment.where(new_id: params[:id]).destroy_all
     @new = New.find(params[:id])
     @new.delete
+    flash.now[:success] = "Eliminada correctamente"
     redirect_to admin_path
   end
 
