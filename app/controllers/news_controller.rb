@@ -6,18 +6,16 @@ class NewsController < ApplicationController
   end
 
   def new
+    puts 'new new new'
     @new = New.new
   end
 
   def create
     puts 'creating'
-    @new = New.new(user_params)
-    if @new.save
-      # Handle a successful save.
+    @new = New.new(new_params)
+    if @new.save then
       @comments = Comment.where(new_id: @new.id)
-      puts @new.id
-      #render 'show'
-      render root
+      render 'show'
     else
       render 'new'
     end
@@ -38,8 +36,10 @@ class NewsController < ApplicationController
     end
   end
 
-  def delete
-    render show
+  def destroy
+    @new = New.find(params[:id])
+    @new.delete
+    redirect_to admin_path
   end
 
   private

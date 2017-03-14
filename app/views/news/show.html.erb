@@ -6,20 +6,20 @@
   </p>
   <div style='margin-top:100px'>
     <h3><u>Comentarios</u></h3>
-    <ul class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-4 col-sm-offset-4">
       <% @comments.each do |comment| %>
-      <li>
-        <p class="username-comment">
-          <%= comment.username %>
+      <div class="username-comment">
+        <p>
+          <%= comment.username %>:
         </p>
-      </li>
-      <li>
-        <p class="body-comment">
+      </div>
+      <div class="body-comment">
+        <p>
           <%= comment.body %>
         </p>
-      </li>
+      </div>
       <% end %>
-    </ul>
+    </div>
   </div>
   <div class="text-center">
     <%= form_for :comment do |f| %>

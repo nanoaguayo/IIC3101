@@ -8,14 +8,20 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: lightgray;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 5px;
 }
 
 .body-comment {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border: 1px solid black;
+  border-top: 0px;
   background-color: gray;
   color:white;
+  margin-bottom: 30px;
+  padding-top: 5px;
 }
 
 .new-container {
@@ -23,4 +29,7 @@
   border-radius: 10px;
   padding: 25px;
   margin-top: 50px;
+  width: 50%;
+  margin-left: 25%;
+  background-color: white;
 }
