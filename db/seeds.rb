@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-#News
+#Reset
+Comment.delete_all
+New.delete_all
+Usuario.delete_all
+#New
 n1 = New.create(title: 'Noticia1', descent: 'Bajada de titulo 1', body: 'Cuerpo de noticia1')
 n2 = New.create(title: 'Noticia2', descent: 'Bajada de titulo 2', body: 'Cuerpo de noticia2')
 n3 = New.create(title: 'Noticia3', descent: 'Bajada de titulo 3', body: 'Cuerpo de noticia3')
@@ -20,3 +23,6 @@ Comment.create(username: 'Diego', body: 'Comentario2', new: n1)
 Comment.create(username: 'Fernando', body: 'Comentario3', new: n2)
 Comment.create(username: 'Juan', body: 'Comentario4', new: n1)
 Comment.create(username: 'Cristobal', body: 'Comentario5', new: n3)
+
+#usuarios
+Usuario.create(usuario: 'FernandoAguayo', nombre: 'Fernando', apellido: 'Aguayo', twitter: 'nanoaguayo')
